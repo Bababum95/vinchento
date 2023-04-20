@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Love tester"
+})
+
+<body class="body">
+    @@include('html/header.html',{})
+    <main>
+        <div class="machine">
+            <h1 class="machine__title">LOVE TESTER</h1>
+            <ul class="machine__list">
+                <li class="machine__item">
+                    <span class="machine__circle machine__circle_1"></span>
+                    <div class="machine__slot slot">
+                        <div class="slot__wrapper">
+                            <p class="slot__input slot__input_1">??????</p>
+                            <p class="slot__input slot__input_1">help Vincent</p>
+                            <p class="slot__input slot__input_1">jump with a parachute</p>
+                            <p class="slot__input slot__input_1 slot__input_verb">??????</p>
+                        </div>
+                    </div>
+                    <span class="machine__circle machine__circle_1"></span>
+                </li>
+                <li class="machine__item">
+                    <span class="machine__circle machine__circle_2"></span>
+                    <div class="machine__slot slot">
+                        <div class="slot__wrapper">
+                            <p class="slot__input slot__input_2">??????</p>
+                            <p class="slot__input slot__input_2">We</p>
+                            <p class="slot__input slot__input_2">Shakira</p>
+                            <p class="slot__input slot__input_2 slot__input_noun">??????</p>
+                        </div>
+                    </div>
+                    <span class="machine__circle machine__circle_2"></span>
+                </li>
+                <li class="machine__item">
+                    <span class="machine__circle machine__circle_3"></span>
+                    <div class="machine__slot slot">
+                        <div class="slot__wrapper">
+                            <p class="slot__input slot__input_3">??????</p>
+                            <p class="slot__input slot__input_3">tomorrow</p>
+                            <p class="slot__input slot__input_3">at this moment</p>
+                            <p class="slot__input slot__input_3 slot__input_when">??????</p>
+                        </div>
+                    </div>
+                    <span class="machine__circle machine__circle_3"></span>
+                </li>
+                <li class="machine__item">
+                    <span class="machine__circle machine__circle_4"></span>
+                    <div class="machine__slot slot">
+                        <div class="slot__wrapper">
+                            <p class="slot__input slot__input_4">??????</p>
+                            <p class="slot__input slot__input_4">?</p>
+                            <p class="slot__input slot__input_4">-</p>
+                            <p class="slot__input slot__input_4 slot__input_question">??????</p>
+                        </div>
+                    </div>
+                    <span class="machine__circle machine__circle_4"></span>
+                </li>
+            </ul>
+            <p class="machine__status"> READY?</p>
+            <div class="machine__arm" id="arm"></div>
+        </div>
+
+
+
+
+    </main>
+    <script src="./scripts/app.min.js"></script>
+    @@include('html/footer.html',{})
+</body>
+
+</html>
