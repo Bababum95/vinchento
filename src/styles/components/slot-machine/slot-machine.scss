@@ -1,4 +1,11 @@
 @import './spin.scss';
+@import './header.scss';
+@import './homer.scss';
+
+.slot-machine-main {
+    display: flex;
+    gap: 100px;
+}
 
 .machine {
     background-image: url('@img/machine.jpg');
@@ -104,12 +111,15 @@
 @media screen and (max-width: 750px) {
     .machine {
         margin: 2.5vh auto;
-        min-height: 700px;
+        min-height: 655px;
+
+        &__status {
+            display: none;
+        }
 
         &__arm {
-            right: 55px;
-            top: auto;
-            bottom: 5px;
+            right: 35px;
+            top: 540px;
         } 
     }
 }
