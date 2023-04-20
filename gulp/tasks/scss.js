@@ -33,15 +33,15 @@ export const scss = () => {
                     noWebpClass: '.no-webp'
                 }))
         )
-        .pipe(
-            app.plugins.ifPlugin(
-                app.isBuild,
-                autoprefixer({
-                    grid: true,
-                    overrideBrowserslist: ['last 3 versions'],
-                    casecade: true
-                }))
-        )
+        // .pipe(
+        //     app.plugins.ifPlugin(
+        //         app.isBuild,
+        //         autoprefixer({
+        //             grid: true,
+        //             overrideBrowserslist: ['last 1 versions'],
+        //             casecade: true
+        //         }))
+        // )
         .pipe(
             app.plugins.ifPlugin(
                 app.isBuild,

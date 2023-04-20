@@ -12,6 +12,7 @@ export const js = () => {
             mode: app.isBuild ? 'production' : 'development',
             entry: {
                 app: './src/scripts/app.js',
+                list: './src/scripts/list.js',
               },
             output: {
                 filename: '[name].min.js'

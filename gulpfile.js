@@ -17,6 +17,7 @@ import {server} from './gulp/tasks/server.js'
 import {scss} from './gulp/tasks/scss.js'
 import {js} from './gulp/tasks/js.js'
 import {images} from './gulp/tasks/images.js'
+import {deploy} from './gulp/tasks/deploy.js'
 import { otfToTtf, ttfToWoff, fontsStyle} from "./gulp/tasks/fonts.js";
 
 function watcher() {
@@ -35,5 +36,6 @@ const build = gulp.series(reset, mainTasks)
 
 export { dev }
 export { build }
+export { deploy }
 
 gulp.task('default', dev);
