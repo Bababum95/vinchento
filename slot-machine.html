@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.min.css?_v=20230420094422">
+    <link rel="stylesheet" href="./styles/style.min.css">
     <title>Love tester</title>
 </head>
 
 <body class="body">
-    <header></header>
+    <header class="header">
+        <div class="header__language language">
+            <select class="language__select">
+                <option value="en">English</option>
+                <option value="ru">Russian</option>
+            </select>
+        </div>
+        <button class="header__button-back">Go to back</button>
+    </header>
     <main>
         <div class="machine">
             <h1 class="machine__title">LOVE TESTER</h1>
@@ -66,12 +74,9 @@
             <p class="machine__status"> READY?</p>
             <div class="machine__arm" id="arm"></div>
         </div>
-
-
-
-
+        <img src="./images/homer.png" alt="Homer" class="homer">
     </main>
-    <script src="./scripts/app.min.js?_v=20230420094422"></script>
+    <script src="./scripts/app.min.js"></script>
     <footer></footer>
 </body>
 
