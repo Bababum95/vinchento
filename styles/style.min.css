@@ -5,7 +5,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url(https://fonts.googleapis.com/css?family=Roboto:900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -315,17 +315,19 @@ template {
   font-weight: 400;
   font-style: normal;
 }
-.language__select, .header__button-back {
+.description__button, .language__select, .header__button-back {
   box-shadow: 0 0 5px 0 #000;
   background-color: #FFF27B;
   border: solid 2px #000;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .body {
   background-color: #B391EB;
   width: 100%;
   font-family: Roboto;
+  font-weight: 700;
 }
 
 .games-list {
@@ -601,11 +603,64 @@ template {
   bottom: 0;
 }
 
+.description {
+  width: 470px;
+  height: fit-content;
+  margin-top: 150px;
+  background-color: #D9D9D9;
+  position: relative;
+  padding: 24px 80px 24px 24px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  box-shadow: 0 0 5px 0 #000;
+  transition: all 0.5s ease;
+}
+.description__title {
+  font-size: 40px;
+  margin: 0;
+}
+.description__text {
+  font-size: 24px;
+  font-weight: 400;
+}
+.description__text span {
+  text-decoration: underline;
+  font-weight: 500;
+}
+.description__button {
+  height: 50px;
+  width: 70px;
+  font-size: 24px;
+  border: 0;
+}
+.description.hide {
+  transform: scaleY(0);
+}
+
+.ask-homer {
+  position: fixed;
+  font-size: 24px;
+  cursor: pointer;
+  bottom: 24px;
+  right: 24px;
+  width: 180px;
+  border: 0;
+  height: 60px;
+  background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #D7443E;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
 @media screen and (max-width: 1000px) {
   .homer {
     display: none;
   }
 }
+.slot-machine-main {
+  display: flex;
+  gap: 100px;
+}
+
 .machine {
   background-image: url("../images/machine.jpg");
   width: 398px;

@@ -16,9 +16,11 @@
                 <option value="ru">Russian</option>
             </select>
         </div>
-        <button class="header__button-back">Go to back</button>
+        <a href="./index.html">
+            <button class="header__button-back">Go to back</button>
+        </a>
     </header>
-    <main>
+    <main class="slot-machine-main">
         <div class="machine">
             <h1 class="machine__title">LOVE TESTER</h1>
             <ul class="machine__list">
@@ -74,7 +76,15 @@
             <p class="machine__status"> READY?</p>
             <div class="machine__arm" id="arm"></div>
         </div>
+        <div class="description">
+            <h2 class="description__title">Description</h2>
+            <p class="description__text">Click on the handle (рукоятка). And make a sentence with the words.<br>
+                Example: <span>Drink, Beer, Homer, Every day</span>
+            </p>
+            <button class="description__button">Ok</button>
+        </div>
         <img src="./images/homer.png" alt="Homer" class="homer">
+        <button class="ask-homer">Ask Homer</button>
     </main>
     <script src="./scripts/app.min.js"></script>
     <footer></footer>
