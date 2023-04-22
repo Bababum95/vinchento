@@ -638,6 +638,8 @@ template {
 }
 .description__word {
   cursor: pointer;
+  position: relative;
+  z-index: 5;
   width: 200px;
   height: 40px;
   margin-bottom: 10px;
