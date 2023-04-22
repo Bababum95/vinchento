@@ -1,24 +1,34 @@
 export default class Slot {
-    constructor(slotSelector, array) {
+    constructor(slotSelector, array, translateSelector) {
         this.slot = document.querySelector(slotSelector)
+        this.translateButton = document.querySelector(translateSelector)
         this.array = array
+        this.setEventListener()
     }
 
-    _getRandomIntInclusive() {
-        this._min = 1;
-        this._max = this.array.length;
-        return Math.floor(Math.random() * (this._max - this._min + 1)) + this._min;
-      }
+    setEventListener() {
+        this.translateButton.addEventListener('click', () => {
+            this.getTranslate()
+        })
+    }
 
     _setSlot(word) {
         this.slot.textContent = word
+        this.translateButton.textContent = word
+    }
+
+    getTranslate() {
+        this.langTranslate = this.lang === 'en'? 'ru': 'en';
+        this.translate = this.array.find(item => item.id === this.randomId)[this.langTranslate]
+        this.translateButton.textContent = this.translate
     }
 
     selectWord(lang) {
+        this.lang = lang
         this.min = this.array[0].id
         this.max = this.min + this.array.length
         this.randomId = Math.floor(Math.random() * (this.max - this.min) + this.min)
-        this.word = this.array.find(item => item.id === this.randomId)[lang]
+        this.word = this.array.find(item => item.id === this.randomId)[this.lang]
         this._setSlot(this.word)
     }
 }

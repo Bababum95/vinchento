@@ -2,19 +2,26 @@
 @import './header.scss';
 @import './homer.scss';
 
+.body-slot-machine {
+    background-image: url('@img/1621764688_7-phonoteka_org-p-fon-kafe-multyashnii-8.jpg');
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
+}
+
 .slot-machine-main {
     display: flex;
-    gap: 100px;
+    gap: 200px;
 }
 
 .machine {
     background-image: url('@img/machine.jpg');
     width: 398px;
-    height: 95vh;
+    height: 98vh;
     min-height: 500px;
     border-radius: 10px;
     position: relative;
-    margin: 2.5vh 0 2.5vh 200px;
+    margin: 2.5vh 0 2.5vh 120px;
     box-shadow: -5px 5px 35px 0 #000;
     background-repeat: no-repeat;
     max-height: 870px;

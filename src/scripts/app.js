@@ -6,16 +6,21 @@ import Slot from './components/classes/Slot.js'
 const arm = document.querySelector('.machine__arm')
 const languageSelect = document.querySelector('.language__select')
 const description = document.querySelector('.description')
+const descriptionTitle = document.querySelector('.description__title')
+const descriptionText = document.querySelector('.description__text')
+const askHomer = document.querySelector('.ask-homer')
 const descriptionButton = document.querySelector('.description__button')
+const descriptionWords = document.querySelector('.description__words')
 const circles = document.querySelectorAll('.machine__circle')
 const slots = document.querySelectorAll('.slot__input')
 const machineTitle = document.querySelector('.machine__title')
-const slotVerbs = new Slot('.slot__input_verb', verbs)
-const slotNoun = new Slot('.slot__input_noun', nouns)
-const slotWhen = new Slot('.slot__input_when', when)
-const slotQuestion = new Slot('.slot__input_question', question)
+const slotVerbs = new Slot('.slot__input_verb', verbs, '.word-translate_1')
+const slotNoun = new Slot('.slot__input_noun', nouns, '.word-translate_2')
+const slotWhen = new Slot('.slot__input_when', when, '.word-translate_3')
+const slotQuestion = new Slot('.slot__input_question', question,'.word-translate_4')
 let timer = null
-let lang = 'en'
+let lang = 'en';
+let translate = 'ru';
 
 function hideDescription() {
     description.classList.add('hide')
@@ -54,15 +59,21 @@ arm.addEventListener('click', () => {
     slotWhen.selectWord(lang)
     slotQuestion.selectWord(lang)
     setTimer()
+    askHomer.classList.remove('none')
 })
 
 languageSelect.addEventListener('input', () => {
     lang = languageSelect.value
-    return lang
+    translate = lang === 'en'? 'ru': 'en';
 })
 
-descriptionButton.addEventListener('click', () => {
-    hideDescription()
+
+descriptionButton.addEventListener('click', hideDescription)
+askHomer.addEventListener('click', () => {
+    description.classList.remove('hide')
+    descriptionWords.classList.remove('none')
+    descriptionTitle.textContent = 'What do you want?'
+    descriptionText.textContent = 'Say the translation:'
 })
 
 isWebp()
