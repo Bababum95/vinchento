@@ -640,7 +640,7 @@ template {
   cursor: pointer;
   position: relative;
   z-index: 5;
-  width: 200px;
+  width: 250px;
   height: 40px;
   margin-bottom: 10px;
   background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #D7443E;
@@ -669,7 +669,12 @@ template {
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1400px) {
+  .homer {
+    right: calc((100% - 1400px) / 2);
+  }
+}
+@media screen and (max-width: 1120px) {
   .description,
   .ask-homer,
   .homer {
@@ -759,6 +764,11 @@ template {
   top: 50%;
 }
 
+@media screen and (max-width: 1400px) {
+  .slot-machine-main {
+    gap: calc(200px - (1400px - 100%) / 2);
+  }
+}
 @media screen and (max-width: 750px) {
   .machine {
     margin: 2.5vh auto;
