@@ -8,7 +8,7 @@
     <title>Love tester</title>
 </head>
 
-<body class="body">
+<body class="body body-slot-machine">
     <header class="header">
         <div class="header__language language">
             <select class="language__select">
@@ -81,10 +81,16 @@
             <p class="description__text">Click on the handle (рукоятка). And make a sentence with the words.<br>
                 Example: <span>Drink, Beer, Homer, Every day</span>
             </p>
+            <div class="description__words none">
+                <button class="description__word word-translate_1"></button>
+                <button class="description__word word-translate_2"></button>
+                <button class="description__word word-translate_3"></button>
+                <button class="description__word word-translate_4 none"></button>
+            </div>
             <button class="description__button">Ok</button>
         </div>
         <img src="./images/homer.png" alt="Homer" class="homer">
-        <button class="ask-homer">Ask Homer</button>
+        <button class="ask-homer none">Ask Homer</button>
     </main>
     <script src="./scripts/app.min.js"></script>
     <footer></footer>
