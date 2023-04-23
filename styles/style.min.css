@@ -439,6 +439,7 @@ template {
   .game__image {
     opacity: 1;
     border-radius: 0;
+    transform: none;
   }
   .game:hover .game__image, .game:focus .game__image {
     transform: none;
