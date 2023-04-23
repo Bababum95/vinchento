@@ -114,10 +114,15 @@
         top: 50%;
     } 
 }
+@media screen and (max-width: 1400px) {
+    .slot-machine-main {
+        gap: calc(200px - (1400px - 100%)/2);
+    }
+}
 
 @media screen and (max-width: 750px) {
     .machine {
-        margin: 2.5vh auto;
+        margin: 0 auto;
         min-height: 655px;
 
         &__status {
@@ -132,6 +137,9 @@
 }
 
 @media screen and (max-width: 400px) {
+    .body-slot-machine {
+        background-image: none;
+    }
     .machine {
         background-position: center -10px;
         width: 100%;
