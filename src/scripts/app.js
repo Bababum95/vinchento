@@ -4,6 +4,8 @@ import Slot from './components/classes/Slot.js'
 
 
 const arm = document.querySelector('.machine__arm')
+const doh = document.querySelector('.doh')
+const songMachine = document.querySelector('.song-machine')
 const languageSelect = document.querySelector('.language__select')
 const description = document.querySelector('.description')
 const descriptionTitle = document.querySelector('.description__title')
@@ -32,6 +34,7 @@ function setTimer() {
     timer = setInterval(() => {
         if (seconds <= 0) {
             clearInterval(timer);
+            doh.play()
             machineTitle.textContent = 'LOVE TESTER'
         } else {
             machineTitle.textContent = seconds
@@ -42,6 +45,7 @@ function setTimer() {
 
 arm.addEventListener('click', () => {
     arm.classList.add('clicked')
+    songMachine.play()
     setTimeout(function () { arm.classList.remove('clicked'); }, 500);
     circles.forEach((circle) => {
         circle.classList.remove('active')

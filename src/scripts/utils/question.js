@@ -1,12 +1,12 @@
 export const question = [
     {
         id: 1001,
-        en: '+',
-        ru: '+'
+        en: '!',
+        ru: '!'
     },
     {
         id: 1002,
-        en: '-',
+        en: 'not',
         ru: '-'
     },
     {
@@ -16,7 +16,7 @@ export const question = [
     },
     {
         id: 1004,
-        en: 'open?',
-        ru: 'открытый?'
+        en: 'Why?',
+        ru: 'Почему?'
     }
 ]
