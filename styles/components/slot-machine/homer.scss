@@ -1,0 +1,93 @@
+.homer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.description {
+    width: 470px;
+    height: fit-content;
+    margin-top: 150px;
+    background-color: #D9D9D9;
+    position: relative;
+    padding: 24px 80px 24px 24px;
+    box-sizing: border-box;
+    border-radius: 35px;
+    box-shadow: 0 0 5px 0 #000;
+    transition: all .5s ease;
+    
+    &__title {
+        font-size: 40px;
+        margin: 0;
+    }
+
+    &__text {
+        font-size: 24px;
+        font-weight: 400;
+
+        span {
+            text-decoration: underline;
+            font-weight: 500;
+        }
+    }
+
+    &__button {
+        @extend %button-yellow;
+        height: 50px;
+        width: 70px;
+        font-size: 24px;
+        border: 0;
+    }
+    &__words {
+        margin-bottom: 20px;
+    }
+
+    &__word {
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+        width: 250px;
+        height: 40px;
+        margin-bottom: 10px;
+        background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #D7443E;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+    }
+
+    &.hide {
+        transform: scaleY(0);
+    }
+}
+
+
+.ask-homer {
+    position: fixed;
+    font-size: 24px;
+    cursor: pointer;
+    bottom: 24px;
+    right: 24px;
+    width: 180px;
+    border: 0;
+    height: 60px;
+    background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #D7443E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.none {
+    display: none;
+}
+
+@media screen and (max-width: 1400px) {
+    .homer {
+        right: calc((100% - 1400px)/2);
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .description,
+    .ask-homer,
+    .homer {
+        display: none;
+    }
+}

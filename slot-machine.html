@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.min.css">
-    <title>Love tester</title>
-</head>
+@@include('html/head.html',{
+"title":"Love tester"
+})
 
 <body class="body body-slot-machine">
     <header class="header">
@@ -89,13 +85,13 @@
             </div>
             <button class="description__button">Ok</button>
         </div>
-        <img src="./images/homer.png" alt="Homer" class="homer">
+        <img src="@img/homer.png" alt="Homer" class="homer">
         <button class="ask-homer none">Ask Homer</button>
     </main>
     <audio class="doh" src="./files/homer-d-oh.mp3"></audio>
     <audio class="song-machine" src="./files/slotmachine_qdsBxQpy.mp3"></audio>
     <script src="./scripts/app.min.js"></script>
-    <footer></footer>
+    @@include('html/footer.html',{})
 </body>
 
 </html>

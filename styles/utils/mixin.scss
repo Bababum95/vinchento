@@ -1,0 +1,10 @@
+// $wrapper: 1250px;
+// $border-line: 1px solid #505050;
+
+%button-yellow {
+    box-shadow: 0 0 5px 0 #000;
+    background-color: #FFF27B;
+    border: solid 2px #000;
+    border-radius: 20px;
+    cursor: pointer;
+}
