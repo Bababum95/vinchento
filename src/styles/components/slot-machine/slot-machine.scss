@@ -12,12 +12,11 @@
 .machine {
     background-image: url('@img/machine2.jpg');
     width: 398px;
-    height: 98vh;
+    height: 100vh;
     min-height: 500px;
     border-radius: 10px;
     position: fixed;
-    top: auto;
-    bottom: 0;
+    top: 0;
     left: 100px;
     box-shadow: -5px 5px 35px 0 #000;
     background-repeat: no-repeat;
@@ -189,6 +188,12 @@
     }
 }
 
+@media screen and (min-height: 870px) {
+    .machine {
+        top: auto;
+        bottom: 0;
+    }
+}
 @media screen and (max-width: 1400px) {
     .slot-machine-main {
         gap: calc(200px - (1400px - 100%)/2);
