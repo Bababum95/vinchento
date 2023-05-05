@@ -10,6 +10,9 @@ export default class Slot {
         this.translateButton.addEventListener('click', () => {
             this.getTranslate()
         })
+        this.slot.addEventListener('click', () => {
+            this.slot.textContent = this.setTranslate()
+        })
     }
 
     _setSlot(word) {
@@ -17,10 +20,14 @@ export default class Slot {
         this.translateButton.textContent = word
     }
 
-    getTranslate() {
+    setTranslate() {
         this.langTranslate = this.lang === 'en'? 'ru': 'en';
         this.translate = this.array.find(item => item.id === this.randomId)[this.langTranslate]
-        this.translateButton.textContent = this.translate
+        return this.translate
+    }
+
+    getTranslate() {
+        this.translateButton.textContent = this.setTranslate()
     }
 
     selectWord(lang) {

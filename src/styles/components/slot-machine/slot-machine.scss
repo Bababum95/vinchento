@@ -9,22 +9,96 @@
     overflow: hidden;
 }
 
-.slot-machine-main {
-    display: flex;
-    gap: 200px;
-}
-
 .machine {
-    background-image: url('@img/machine.jpg');
+    background-image: url('@img/machine2.jpg');
     width: 398px;
     height: 98vh;
     min-height: 500px;
     border-radius: 10px;
-    position: relative;
-    margin: 2.5vh 0 2.5vh 120px;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 100px;
     box-shadow: -5px 5px 35px 0 #000;
     background-repeat: no-repeat;
     max-height: 870px;
+
+    &__menu-button {
+        background-color: transparent;
+        border: none;
+        background-image: url('@img/dots.svg');
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+        display: none;
+
+        &.open {
+            background-image: url('@img/cancel.svg');
+        }
+    }
+
+    &__menu {
+        background-color: #FFF27B;
+        width: 330px;
+        height: 0;
+        position: absolute;
+        top: 15px;
+        left: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        overflow: hidden;
+
+        &.open {
+            animation: open-menu 0.3s forwards;
+        }
+        &.close {
+            animation: close-menu 0.3s forwards;
+        }
+    }
+
+    &__sound {
+        border: 0;
+        background-color: transparent;
+        transition: all 0.1s ease-in-out;
+
+        & .sound-off {
+            display: none;
+        }
+
+        &.off {
+            & .sound-off {
+                display: block;
+            }
+
+            & .sound-on {
+                display: none;
+            }
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+
+    &__lang {
+        border: 0;
+        background-color: transparent;
+        transition: all 0.1s ease-in-out;
+        font-size: 50px;
+        font-weight: 500;
+
+        &:active {
+            transform: scale(0.9);
+        }
+    }
 
     &__title {
         font-family: Starborn;
@@ -63,38 +137,38 @@
 
         &_1.active {
             animation: bulb .5s,
-            bulb .5s .6s,
-            bulb .5s 1.2s forwards,
-            bulb .5s 8.8s reverse,
-            bulb .5s 9.4s reverse,
-            bulb .5s 10s forwards reverse;
+                bulb .5s .6s,
+                bulb .5s 1.2s forwards,
+                bulb .5s 8.8s reverse,
+                bulb .5s 9.4s reverse,
+                bulb .5s 10s forwards reverse;
         }
 
         &_2.active {
             animation: bulb .5s .1s,
-            bulb .5s .7s,
-            bulb .5s 1.3s forwards,
-            bulb .5s 8.9s reverse,
-            bulb .5s 9.5s reverse,
-            bulb .5s 10.1s forwards reverse;
+                bulb .5s .7s,
+                bulb .5s 1.3s forwards,
+                bulb .5s 8.9s reverse,
+                bulb .5s 9.5s reverse,
+                bulb .5s 10.1s forwards reverse;
         }
 
         &_3.active {
             animation: bulb .5s .2s,
-            bulb .5s .8s,
-            bulb .5s 1.4s forwards,
-            bulb .5s 9s reverse,
-            bulb .5s 9.6s reverse,
-            bulb .5s 10.2s forwards reverse;
+                bulb .5s .8s,
+                bulb .5s 1.4s forwards,
+                bulb .5s 9s reverse,
+                bulb .5s 9.6s reverse,
+                bulb .5s 10.2s forwards reverse;
         }
 
         &_4.active {
             animation: bulb .5s .3s,
-            bulb .5s .9s,
-            bulb .5s 1.5s forwards,
-            bulb .5s 9.1s reverse,
-            bulb .5s 9.7s reverse,
-            bulb .5s 10.3s forwards reverse;
+                bulb .5s .9s,
+                bulb .5s 1.5s forwards,
+                bulb .5s 9.1s reverse,
+                bulb .5s 9.7s reverse,
+                bulb .5s 10.3s forwards reverse;
         }
     }
 
@@ -112,18 +186,25 @@
         position: absolute;
         right: -55px;
         top: 50%;
-    } 
+    }
 }
+
 @media screen and (max-width: 1400px) {
     .slot-machine-main {
         gap: calc(200px - (1400px - 100%)/2);
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .machine__menu-button {
+        display: block;
+    }
+}
+
 @media screen and (max-width: 750px) {
     .machine {
-        margin: 0 auto;
         min-height: 655px;
+        left: 0;
 
         &__status {
             display: none;
@@ -132,17 +213,23 @@
         &__arm {
             right: 35px;
             top: 540px;
-        } 
+        }
     }
 }
 
 @media screen and (max-width: 400px) {
     .body-slot-machine {
-        background-image: none;
+        background-image: url('@img/none.png');
     }
+
     .machine {
         background-position: center -10px;
         width: 100%;
+
+        &__menu {
+            left: calc((100% - 335px)/2);
+            top: 5px;
+        }
 
         &__title {
             padding-top: 0;
@@ -150,7 +237,7 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 365px) {
     .machine__list {
         padding: 20px 20px 0;
     }
@@ -161,8 +248,27 @@
         background: #A03B3B;
         box-shadow: none;
     }
+
     to {
         background: radial-gradient(56.67% 56.67% at 50% 50%, #FF9D9D 0%, #FF0000 100%), #FF0000;
         box-shadow: 0px 0px 15px 12px rgba(255, 9, 9, 0.25);
     }
-  }
+}
+
+@keyframes open-menu {
+    from {
+        height: 0;
+    }
+    to {
+        height: 119px;
+    }
+}
+
+@keyframes close-menu {
+    from {
+        height: 119px;
+    }
+    to {
+        height: 0;
+    }
+}

@@ -3,7 +3,8 @@
     background-size: cover;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 50px 15px 580px;
+    padding: 15px 50px 15px 550px;
+    gap: 10px;
     position: fixed;
     display: flex;
     top: 0;
@@ -16,9 +17,32 @@
         width: 240px;
         height: 70px;
         padding-left: 40px;
-        background-position:20px 12px;
+        background-position: 20px 12px;
         background-repeat: no-repeat;
         background-image: url('@img/replay.svg');
+    }
+
+    &__sound {
+        @extend %button-yellow;
+        width: 140px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .sound-off {
+            display: none;
+        }
+
+        &.off {
+            & .sound-off {
+                display: block;
+            }
+
+            & .sound-on {
+                display: none;
+            }
+        }
     }
 }
 
@@ -32,10 +56,30 @@
     }
 }
 
+@media screen and (max-width: 1250px) {
+
+    .header__button-back,
+    .language__select {
+        width: 180px;
+    }
+
+    .header {
+        &__button-back {
+            background-size: 25px;
+            background-position: 15px 20px;
+        }
+
+        &__sound {
+            width: 90px;
+        }
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .header {
         display: none;
     }
+
     .language {
         display: none;
     }
