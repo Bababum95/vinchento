@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.min.css?_v=20230424203509">
+    <link rel="stylesheet" href="./styles/style.min.css?_v=20230505113531">
     <title>Love tester</title>
 </head>
 
 <body class="body body-slot-machine">
     <header class="header">
+        <div class="header__sound">
+            <svg width="66" height="48" viewBox="0 0 66 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3 31.5V19.5C3 17.8432 4.34316 16.5 6 16.5H14.0917C14.6839 16.5 15.263 16.3247 15.7558 15.9962L28.3359 7.60941C30.3297 6.28029 33 7.70946 33 10.1056V40.8945C33 43.2906 30.3297 44.7198 28.3359 43.3905L15.7558 35.0037C15.263 34.6752 14.6839 34.5 14.0917 34.5H6C4.34316 34.5 3 33.1569 3 31.5Z"
+                    stroke="black" stroke-width="5" />
+                <path class="sound-on" d="M46.5 12C46.5 12 51 16.5 51 24C51 31.5 46.5 36 46.5 36" stroke="black" stroke-width="5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path class="sound-on" d="M55.5 3C55.5 3 63 10.5 63 24C63 37.5 55.5 45 55.5 45" stroke="black" stroke-width="5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                <path class="sound-off" d="M39 36L49 26M49 26L59 16M49 26L39 16M49 26L59 36" stroke="black" stroke-width="5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
         <div class="header__language language">
             <select class="language__select">
                 <option value="en">English</option>
@@ -22,6 +35,23 @@
     </header>
     <main class="slot-machine-main">
         <div class="machine">
+            <div class="machine__menu close">
+                <button class="machine__sound">
+                    <svg width="66" height="48" viewBox="0 0 66 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 31.5V19.5C3 17.8432 4.34316 16.5 6 16.5H14.0917C14.6839 16.5 15.263 16.3247 15.7558 15.9962L28.3359 7.60941C30.3297 6.28029 33 7.70946 33 10.1056V40.8945C33 43.2906 30.3297 44.7198 28.3359 43.3905L15.7558 35.0037C15.263 34.6752 14.6839 34.5 14.0917 34.5H6C4.34316 34.5 3 33.1569 3 31.5Z"
+                            stroke="black" stroke-width="5" />
+                        <path class="sound-on" d="M46.5 12C46.5 12 51 16.5 51 24C51 31.5 46.5 36 46.5 36" stroke="black" stroke-width="5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="sound-on" d="M55.5 3C55.5 3 63 10.5 63 24C63 37.5 55.5 45 55.5 45" stroke="black" stroke-width="5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path class="sound-off" d="M39 36L49 26M49 26L59 16M49 26L39 16M49 26L59 36" stroke="black" stroke-width="5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button class="machine__lang">En</button>
+            </div>
+            <button class="machine__menu-button"></button>
             <h1 class="machine__title">LOVE TESTER</h1>
             <ul class="machine__list">
                 <li class="machine__item">
@@ -93,8 +123,8 @@
         <button class="ask-homer none">Ask Homer</button>
     </main>
     <audio class="doh" src="./files/homer-d-oh.mp3"></audio>
-    <audio class="song-machine" src="./files/slotmachine_qdsBxQpy.mp3"></audio>
-    <script src="./scripts/app.min.js?_v=20230424203509"></script>
+    <audio class="song-machine" src="./files/slotmachine.mp3"></audio>
+    <script src="./scripts/app.min.js?_v=20230505113531"></script>
     <footer></footer>
 </body>
 
